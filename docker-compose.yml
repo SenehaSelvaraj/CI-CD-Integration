@@ -2,7 +2,7 @@ version: "3.8"
 services:
   mysql-db:
     image: mysql:8.0
-    container_name: mysql-db
+    container_name: CICD-db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: dockerdb
@@ -21,7 +21,7 @@ services:
     depends_on:
       - mysql-db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/dockerdb?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/CICDdockerdb?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
  
